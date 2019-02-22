@@ -10,3 +10,7 @@ workflows:
     - orb-tools/pack:
         requires:
         - orb-tools/lint
+    - orb-tools/publish-dev:
+        orb-name: nemo157/rust
+        requires:
+        - orb-tools/pack
