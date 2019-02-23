@@ -14,6 +14,10 @@ parameters:
     type: boolean
     default: false
 
+  locked:
+    type: boolean
+    default: false
+
   persist-workspace:
     type: boolean
     default: false
@@ -25,6 +29,7 @@ steps:
     attach-workspace: << parameters.attach-workspace >>
     toolchain: << parameters.toolchain >>
     minimal-versions: << parameters.minimal-versions >>
+    locked: << parameters.locked >>
     persist-workspace: << parameters.persist-workspace >>
     steps:
     - cargo:
