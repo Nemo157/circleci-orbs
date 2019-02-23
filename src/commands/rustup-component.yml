@@ -8,7 +8,7 @@ parameters:
 steps:
 - run:
     command: >
-      rustup
+      rustup component
       << parameters.command >>
       <<# parameters.toolchain >>
         --toolchain << parameters.toolchain >>
