@@ -2,5 +2,5 @@ executor: rust
 steps:
 - attach_rust_workspace
 - checkout
-- build
+- check
 - persist_target
