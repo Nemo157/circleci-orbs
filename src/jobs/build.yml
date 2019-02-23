@@ -1,6 +1,6 @@
 executor: rust
 steps:
-- attach_rust_workspace
 - checkout
+- attach_rust_workspace
 - build
 - persist_target

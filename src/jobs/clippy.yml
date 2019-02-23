@@ -1,5 +1,5 @@
 executor: rust
 steps:
-- attach_rust_workspace
 - checkout
+- attach_rust_workspace
 - clippy
