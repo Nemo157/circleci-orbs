@@ -1,0 +1,7 @@
+parameters:
+  command:
+    type: string
+
+steps:
+- run:
+    command: rustup << parameters.command >>
