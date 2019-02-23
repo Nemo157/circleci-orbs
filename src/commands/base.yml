@@ -17,9 +17,6 @@ parameters:
   persist-workspace:
     type: boolean
 
-  locked:
-    type: boolean
-
 steps:
 - when:
     condition: << parameters.checkout >>
@@ -31,10 +28,12 @@ steps:
     - attach-rust-workspace
 - rustup-update:
     toolchain: << parameters.toolchain >>
-- cargo-update:
-    toolchain: << parameters.toolchain >>
-    locked: << parameters.locked >>
-    minimal-versions: << parameters.minimal-versions >>
+- when:
+    condition: << parameters.minimal-versions >>
+    steps:
+    - cargo:
+        toolchain: nightly
+        command: update -Z minimal-versions
 - steps: << parameters.steps >>
 - when:
     condition: << parameters.persist-workspace >>
