@@ -1,41 +1,16 @@
 parameters:
-  checkout:
-    type: boolean
-    default: true
-
-  attach-workspace:
-    type: boolean
-    default: true
-
   toolchain:
     type: string
     default: ""
 
-  minimal-versions:
-    type: boolean
-    default: false
-
-  locked:
-    type: boolean
-    default: false
-
-  persist-workspace:
-    type: boolean
-    default: false
-
 executor: rust
 steps:
-- base:
-    checkout: << parameters.checkout >>
-    attach-workspace: << parameters.attach-workspace >>
+- checkout
+- rustup-update:
     toolchain: << parameters.toolchain >>
-    minimal-versions: << parameters.minimal-versions >>
-    locked: << parameters.locked >>
-    persist-workspace: << parameters.persist-workspace >>
-    steps:
-    - rustup:
-        toolchain: << parameters.toolchain >>
-        command: component add rustfmt
-    - cargo:
-        toolchain: << parameters.toolchain >>
-        command: fmt -- --check
+- rustup:
+    toolchain: << parameters.toolchain >>
+    command: component add rustfmt
+- cargo:
+    toolchain: << parameters.toolchain >>
+    command: fmt -- --check
