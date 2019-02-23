@@ -1,0 +1,15 @@
+jobs:
+- check
+- fmt
+- build:
+    requires: [check]
+- clippy:
+    requires: [check]
+- test:
+    requires: [build]
+- test:
+    name: test --minimal-versions
+    toolchain: nightly
+    minimal-versions: true
+    attach-workspace: false
+    requires: [check]
