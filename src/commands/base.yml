@@ -31,6 +31,8 @@ steps:
 - when:
     condition: << parameters.minimal-versions >>
     steps:
+    - rustup-update:
+        toolchain: nightly
     - cargo:
         toolchain: nightly
         command: update -Z minimal-versions
