@@ -1,0 +1,3 @@
+steps:
+- cargo:
+    command: test
