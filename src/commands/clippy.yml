@@ -1,5 +1,0 @@
-steps:
-- rustup:
-    command: component add clippy
-- cargo:
-    command: clippy -- -D warnings
