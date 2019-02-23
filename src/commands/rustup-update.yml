@@ -1,0 +1,7 @@
+parameters:
+  toolchain:
+    type: string
+
+steps:
+- rustup:
+    command: update << parameters.toolchain >>

@@ -1,5 +1,32 @@
+parameters:
+  checkout:
+    type: boolean
+    default: true
+
+  attach-workspace:
+    type: boolean
+    default: true
+
+  toolchain:
+    type: string
+
+  minimal-versions:
+    type: boolean
+    default: false
+
+  persist-workspace:
+    type: boolean
+    default: false
+
 executor: rust
 steps:
-- checkout
-- attach_rust_workspace
-- test
+- base:
+    checkout: << parameters.checkout >>
+    attach-workspace: << parameters.attach-workspace >>
+    toolchain: << parameters.toolchain >>
+    minimal-versions: << parameters.minimal-versions >>
+    persist-workspace: << parameters.persist-workspace >>
+    steps:
+    - cargo:
+        toolchain: << parameters.toolchain >>
+        command: test

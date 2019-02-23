@@ -1,7 +1,15 @@
 parameters:
+  toolchain:
+    type: string
+
   command:
     type: string
 
 steps:
 - run:
-    command: cargo << parameters.command >>
+    command: >
+      cargo
+      <<# parameters.toolchain >>
+        +<< parameters.toolchain >>
+      <</ parameters.toolchain >>
+      << parameters.command >>

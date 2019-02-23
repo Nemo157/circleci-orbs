@@ -1,0 +1,12 @@
+parameters:
+  toolchain:
+    type: string
+
+steps:
+- when:
+  condition: << parameters.toolchain >>
+  steps:
+  - rustup:
+      command: default << parameters.toolchain >>
+- rustup:
+    command: update

@@ -1,0 +1,42 @@
+parameters:
+  checkout:
+    type: boolean
+
+  attach-workspace:
+    type: boolean
+
+  toolchain:
+    type: string
+
+  minimal-versions:
+    type: boolean
+
+  steps:
+    type: steps
+
+  persist-workspace:
+    type: boolean
+
+  locked:
+    type: boolean
+
+steps:
+- when:
+    condition: << parameters.checkout >>
+    steps:
+    - checkout
+- when:
+    condition: << parameters.attach-workspace >>
+    steps:
+    - attach-rust-workspace
+- rustup-update:
+    toolchain: << parameters.toolchain >>
+- cargo-update:
+    toolchain: << parameters.toolchain >>
+    locked: << parameters.locked >>
+    minimal-versions: << parameters.minimal-versions >>
+- steps: << parameters.steps >>
+- when:
+    condition: << parameters.persist-workspace >>
+    steps:
+    - persist-target

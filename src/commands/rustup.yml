@@ -1,7 +1,15 @@
 parameters:
+  toolchain:
+    type: string
+
   command:
     type: string
 
 steps:
 - run:
-    command: rustup << parameters.command >>
+    command: >
+      rustup
+      << parameters.command >>
+      <<# parameters.toolchain >>
+        --toolchain << parameters.toolchain >>
+      <</ parameters.toolchain >>
