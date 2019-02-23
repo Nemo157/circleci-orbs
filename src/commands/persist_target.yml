@@ -1,4 +1,5 @@
-persist_to_workspace:
-  root: .
-  paths:
-  - target
+steps:
+- persist_to_workspace:
+    root: .
+    paths:
+    - target
