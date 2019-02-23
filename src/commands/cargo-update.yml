@@ -29,5 +29,5 @@ steps:
         command: >
           update
           <<# parameters.minimal-versions >>
-            -Z minimal-versions
+          -Z minimal-versions
           <</ parameters.minimal-versions >>

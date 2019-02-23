@@ -3,7 +3,5 @@ parameters:
     type: string
 
 steps:
-- rustup:
-    # This command doesn't take toolchain in --toolchain like others
-    toolchain: ""
-    command: update << parameters.toolchain >>
+- run:
+    command: rustup update << parameters.toolchain >>

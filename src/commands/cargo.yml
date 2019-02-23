@@ -6,10 +6,6 @@ parameters:
     type: string
 
 steps:
-- run:
-    command: >
-      cargo
-      <<# parameters.toolchain >>
-        +<< parameters.toolchain >>
-      <</ parameters.toolchain >>
-      << parameters.command >>
+- rustup-run:
+    toolchain: << parameters.toolchain >>
+    command: cargo << parameters.command >>

@@ -8,9 +8,9 @@ steps:
 - checkout
 - rustup-update:
     toolchain: << parameters.toolchain >>
-- rustup:
+- rustup-component:
     toolchain: << parameters.toolchain >>
-    command: component add rustfmt
+    command: add rustfmt
 - cargo:
     toolchain: << parameters.toolchain >>
     command: fmt -- --check

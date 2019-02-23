@@ -33,9 +33,9 @@ steps:
     locked: << parameters.locked >>
     persist-workspace: << parameters.persist-workspace >>
     steps:
-    - rustup:
+    - rustup-component:
         toolchain: << parameters.toolchain >>
-        command: component add clippy
+        command: add clippy
     - cargo:
         toolchain: << parameters.toolchain >>
         command: clippy
