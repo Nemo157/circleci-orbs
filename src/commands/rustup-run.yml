@@ -7,4 +7,4 @@ parameters:
 
 steps:
 - rustup:
-    command: rustup run << parameters.toolchain >> << parameters.command >>
+    command: run << parameters.toolchain >> << parameters.command >>
