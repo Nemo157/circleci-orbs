@@ -3,5 +3,8 @@ parameters:
     type: string
 
 steps:
-- run:
-    command: rustup update << parameters.toolchain >>
+- when:
+    condition: << parameters.toolchain >>
+    steps:
+    - run:
+        command: rustup update << parameters.toolchain >>

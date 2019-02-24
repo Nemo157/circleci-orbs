@@ -11,5 +11,5 @@ steps:
       rustup component
       << parameters.command >>
       <<# parameters.toolchain >>
-        --toolchain << parameters.toolchain >>
+      --toolchain << parameters.toolchain >>
       <</ parameters.toolchain >>
