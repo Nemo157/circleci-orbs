@@ -8,8 +8,4 @@ parameters:
 steps:
 - rustup:
     command: >
-      component
-      << parameters.command >>
-      <<# parameters.toolchain >>
-      --toolchain << parameters.toolchain >>
-      <</ parameters.toolchain >>
+      component << parameters.command >> --toolchain << parameters.toolchain >>

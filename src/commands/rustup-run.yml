@@ -6,13 +6,5 @@ parameters:
     type: string
 
 steps:
-- when:
-    condition: << parameters.toolchain >>
-    steps:
-    - rustup:
-        command: run << parameters.toolchain >> << parameters.command >>
-- unless:
-    condition: << parameters.toolchain >>
-    steps:
-    - rustup:
-        command: << parameters.command >>
+- rustup:
+    command: rustup run << parameters.toolchain >> << parameters.command >>

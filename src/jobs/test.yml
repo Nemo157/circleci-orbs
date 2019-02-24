@@ -9,7 +9,7 @@ parameters:
 
   toolchain:
     type: string
-    default: ""
+    default: "stable"
 
   minimal-versions:
     type: boolean

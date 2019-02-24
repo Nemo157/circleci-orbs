@@ -1,7 +1,7 @@
 parameters:
   toolchain:
     type: string
-    default: ""
+    default: "stable"
 
 executor: rust
 steps:
