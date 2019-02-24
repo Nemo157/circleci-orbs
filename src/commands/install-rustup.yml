@@ -8,4 +8,4 @@ steps:
       curl https://sh.rustup.rs -sSf
       | sh -s -- --no-modify-path --default-toolchain none -y
 - run:
-    command: source $HOME/.cargo/bin
+    command: source $CARGO_HOME/env
