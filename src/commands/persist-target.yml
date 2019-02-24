@@ -1,4 +1,10 @@
 steps:
+- run:
+    command: rm -rf $RUSTUP_HOME/*/share/
+- run:
+    command: rm -rf $CARGO_HOME/registry/src
+- run:
+    command: rm -rf $CARGO_HOME/git/checkouts
 - persist_to_workspace:
     root: .
     paths:
