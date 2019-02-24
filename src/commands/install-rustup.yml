@@ -1,9 +1,0 @@
-steps:
-- run:
-    command: apt-get update && apt-get upgrade -y
-- run:
-    command: apt-get install -y curl
-- run:
-    command: >
-      curl https://sh.rustup.rs -sSf
-      | sh -s -- --no-modify-path --default-toolchain none -y
