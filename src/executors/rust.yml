@@ -4,3 +4,4 @@ docker:
 environment:
   RUSTUP_HOME: target/rustup
   CARGO_HOME: target/cargo
+  PATH: "target/cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
