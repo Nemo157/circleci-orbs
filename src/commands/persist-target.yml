@@ -1,6 +1,6 @@
 steps:
 - run:
-    command: rm -rf $RUSTUP_HOME/*/share/
+    command: rm -rf $RUSTUP_HOME/toolchains/*/share/
 - run:
     command: rm -rf $CARGO_HOME/registry/src
 - run:
