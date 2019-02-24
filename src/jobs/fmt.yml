@@ -6,7 +6,6 @@ parameters:
 executor: rust
 steps:
 - checkout
-- install-rustup
 - rustup-update:
     toolchain: << parameters.toolchain >>
 - rustup-component:
