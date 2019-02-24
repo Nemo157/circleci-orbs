@@ -5,3 +5,7 @@ parameters:
 steps:
 - rustup:
     command: update << parameters.toolchain >>
+- run:
+    command: >
+      rm -rf
+      $(rustup run << parameters.toolchain >> rustc --print sysroot)/share/
