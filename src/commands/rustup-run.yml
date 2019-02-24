@@ -9,10 +9,10 @@ steps:
 - when:
     condition: << parameters.toolchain >>
     steps:
-    - run:
-        command: rustup run << parameters.toolchain >> << parameters.command >>
+    - rustup:
+        command: run << parameters.toolchain >> << parameters.command >>
 - unless:
     condition: << parameters.toolchain >>
     steps:
-    - run:
+    - rustup:
         command: << parameters.command >>

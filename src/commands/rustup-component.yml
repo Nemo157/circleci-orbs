@@ -6,9 +6,9 @@ parameters:
     type: string
 
 steps:
-- run:
+- rustup:
     command: >
-      rustup component
+      component
       << parameters.command >>
       <<# parameters.toolchain >>
       --toolchain << parameters.toolchain >>

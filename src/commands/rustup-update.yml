@@ -6,5 +6,5 @@ steps:
 - when:
     condition: << parameters.toolchain >>
     steps:
-    - run:
-        command: rustup update << parameters.toolchain >>
+    - rustup:
+        command: update << parameters.toolchain >>

@@ -1,2 +1,6 @@
 docker:
 - image: circleci/rust:latest
+
+environment:
+  RUSTUP_HOME: target/rustup
+  CARGO_HOME: target/cargo
