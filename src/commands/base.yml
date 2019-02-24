@@ -18,7 +18,6 @@ parameters:
     type: boolean
 
 steps:
-- install-rustup
 - when:
     condition: << parameters.checkout >>
     steps:
@@ -27,6 +26,7 @@ steps:
     condition: << parameters.attach-workspace >>
     steps:
     - attach-rust-workspace
+- install-rustup
 - rustup-update:
     toolchain: << parameters.toolchain >>
 - when:
