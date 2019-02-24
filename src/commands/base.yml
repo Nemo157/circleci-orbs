@@ -18,6 +18,7 @@ parameters:
     type: boolean
 
 steps:
+- install-rustup
 - when:
     condition: << parameters.checkout >>
     steps:
