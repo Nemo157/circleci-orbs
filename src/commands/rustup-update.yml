@@ -4,4 +4,4 @@ parameters:
 
 steps:
 - rustup:
-    command: update << parameters.toolchain >>
+    command: update --no-self-update << parameters.toolchain >>
